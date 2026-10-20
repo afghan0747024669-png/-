@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ps" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080b12">
+<title>☠️ طلامحمدافغان ☠️ | پښتو غږ</title>
+<style>
+:root{color-scheme:dark;--bg:#080b12;--panel:#111827;--line:#263244;--cyan:#39e6d0;--red:#ff3157;--text:#f4f7fb;--muted:#a9b5c7}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% 0,#172638 0,#080b12 52%);color:var(--text);font-family:Tahoma,"Noto Naskh Arabic",Arial,sans-serif;min-height:100vh}
+header{padding:24px 16px 12px;text-align:center}.skull{font-size:28px}h1{margin:8px 0;color:var(--cyan);font-size:clamp(25px,5vw,40px);text-shadow:0 0 18px #39e6d044}header p{color:var(--muted);margin:8px auto;max-width:650px;line-height:1.9}
+.wrap{max-width:850px;margin:auto;padding:12px 16px 34px}.panel{background:#111827eF;border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:0 15px 45px #0005;margin:14px 0}
+label{display:block;font-weight:bold;margin:0 0 10px;color:#d9e4f2}textarea{width:100%;min-height:170px;resize:vertical;background:#080d16;border:1px solid #344257;border-radius:13px;padding:15px;color:#fff;font:18px/1.9 Tahoma,Arial,sans-serif;outline:none}textarea:focus{border-color:var(--cyan);box-shadow:0 0 0 3px #39e6d01a}
+.controls{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}.field{background:#0a101a;border:1px solid var(--line);border-radius:12px;padding:12px}select,input[type=range]{width:100%;margin-top:8px}select{background:#111827;color:#fff;border:1px solid #344257;border-radius:8px;padding:10px;font:inherit}
+.buttons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:16px}button,.linkbtn{font:700 15px Tahoma,Arial,sans-serif;border:1px solid #344257;border-radius:12px;padding:13px 12px;color:#fff;background:#1a2637;text-align:center;text-decoration:none;cursor:pointer;transition:.2s;display:block}button:hover,.linkbtn:hover{transform:translateY(-1px);border-color:var(--cyan)}.primary{background:linear-gradient(120deg,#0c948e,#176b88);border-color:#39e6d0}.danger{background:#37121d;border-color:#853044}.note{color:var(--muted);font-size:13px;line-height:1.9;margin:12px 0 0}.status{margin-top:12px;padding:10px 12px;border-radius:10px;background:#0a101a;color:var(--cyan);line-height:1.8;min-height:42px}
+.brand{font-weight:bold;color:var(--cyan);text-align:center;line-height:1.8}.social{display:grid;grid-template-columns:1fr 1fr;gap:10px}.social .linkbtn{background:#17152b;border-color:#40375d}.footer{text-align:center;padding:18px 10px;color:var(--muted);font-size:13px;line-height:2}.tiny{font-size:12px;color:var(--muted)}
+@media(max-width:560px){.controls,.buttons,.social{grid-template-columns:1fr}.panel{padding:15px}header{padding-top:18px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="skull">☠️ ☠️ ☠️</div>
+  <h1>☠️ طلامحمدافغان ☠️</h1>
+  <p>د پښتو لیکنه په غږ واړوئ — په اسانه، په خپل موبایل کې.</p>
+  <div class="brand">☠️طلامحمدافغان☠️</div>
+</header>
+<main class="wrap">
+  <section class="panel">
+    <label for="text">خپله پښتو لیکنه دلته ولیکئ</label>
+    <textarea id="text" maxlength="5000" placeholder="دلته خپله لیکنه ولیکئ...">سلامونه! زه طلامحمدافغان یم. دې ویب‌سایټ ته ښه راغلاست.</textarea>
+    <div class="tiny" id="count">۰ / ۵۰۰۰ توري</div>
+    <div class="controls">
+      <div class="field">
+        <label for="voice">د غږ ډول</label>
+        <select id="voice"><option value="auto">په موبایل کې موجود پښتو غږ</option><option value="male">نارینه غږ (که موجود وي)</option><option value="female">ښځینه غږ (که موجود وي)</option></select>
+      </div>
+      <div class="field">
+        <label for="speed">د غږ چټکتیا</label>
+        <input id="speed" type="range" min="0.6" max="1.4" step="0.1" value="1">
+        <div class="tiny">اوسنی سرعت: <span id="speedval">۱</span></div>
+      </div>
+    </div>
+    <div class="buttons">
+      <button class="primary" id="speak">🔊 لیکنه په غږ واورئ</button>
+      <button id="stop">⏹ غږ بند کړئ</button>
+      <button id="copy">📋 لیکنه کاپي کړئ</button>
+      <button id="download" class="danger">⬇ د غږ جوړولو پاڼه خلاصه کړئ</button>
+    </div>
+    <div class="status" id="status" role="status">☠️طلامحمدافغان☠️ — خپله لیکنه ولیکئ او د غږ بټن کېکاږئ.</div>
+    <p class="note">یادونه: د موبایل غږونه د موبایل او براوزر له مخې توپیر لري؛ که پښتو غږ موجود نه وي، غږ ښايي په بله ژبه ولوستل شي. د پښتو مصنوعي غږ او د MP3 جوړولو لپاره د غږ جوړولو بټن به د پښتو غږ پاڼه پرانیزي.</p>
+  </section>
+  <section class="panel">
+    <div class="brand">☠️طلامحمدافغان☠️ — زما د ټیک‌ټاک پاڼې</div>
+    <div class="social" style="margin-top:14px">
+      <a class="linkbtn" href="https://www.tiktok.com/@kingtilamohammadafghan" target="_blank" rel="noopener">🎵 زما د ټیک‌ټاک اکاونټ</a>
+      <a class="linkbtn" href="https://www.tiktok.com/@kingsecretafghan" target="_blank" rel="noopener">☠️ کینګ مخفي افغان د ټیک‌ټاک اکاونټ</a>
+    </div>
+    <p class="note">د ټیک‌ټاک بټن کېکاږئ؛ ستاسو د ټیک‌ټاک پاڼه به په براوزر کې پرانیستل شي. که اپلیکیشن نصب وي، کېدای شي په ټیک‌ټاک کې هم خلاصه شي.</p>
+  </section>
+</main>
+<footer class="footer">
+  <div>☠️طلامحمدافغان☠️</div>
+  <div>دا ویب‌سایټ د طلامحمدافغان لپاره جوړ شوی</div>
+</footer>
+<script>
+const textEl=document.getElementById('text'), count=document.getElementById('count'), statusEl=document.getElementById('status'), speed=document.getElementById('speed');
+function updateCount(){count.textContent=String(textEl.value.length).replace(/[0-9]/g,d=>'۰۱۲۳۴۵۶۷۸۹'[+d])+' / ۵۰۰۰ توري'}
+textEl.addEventListener('input',updateCount);
+speed.addEventListener('input',()=>document.getElementById('speedval').textContent=String(speed.value).replace(/[0-9]/g,d=>'۰۱۲۳۴۵۶۷۸۹'[+d]));
+document.getElementById('speak').addEventListener('click',()=>{
+ const text=textEl.value.trim();
+ if(!text){statusEl.textContent='☠️طلامحمدافغان☠️ — لومړی خپله لیکنه ولیکئ.';return}
+ if(!('speechSynthesis' in window)){statusEl.textContent='ستاسو براوزر د غږ لوستلو ملاتړ نه کوي. د غږ جوړولو پاڼه خلاصه کړئ.';return}
+ speechSynthesis.cancel();
+ const u=new SpeechSynthesisUtterance(text);
+ const voices=speechSynthesis.getVoices();
+ const pashto=voices.filter(v=>/ps|pashto/i.test(v.lang+' '+v.name));
+ const wanted=document.getElementById('voice').value;
+ let chosen=pashto[0];
+ if(wanted==='male') chosen=pashto.find(v=>/male|gul nawaz/i.test(v.name))||chosen;
+ if(wanted==='female') chosen=pashto.find(v=>/female|latifa/i.test(v.name))||chosen;
+ if(chosen){u.voice=chosen;u.lang=chosen.lang}else{u.lang='ps-AF'}
+ u.rate=Number(speed.value);
+ u.onstart=()=>statusEl.textContent='☠️طلامحمدافغان☠️ — غږ روان دی...';
+ u.onend=()=>statusEl.textContent='☠️طلامحمدافغان☠️ — لوستل بشپړ شول.';
+ u.onerror=()=>statusEl.textContent='د موبایل غږ ونه چلېد. د پښتو غږ جوړولو پاڼه وکاروئ.';
+ speechSynthesis.speak(u);
+});
+document.getElementById('stop').addEventListener('click',()=>{if('speechSynthesis'in window)speechSynthesis.cancel();statusEl.textContent='☠️طلامحمدافغان☠️ — غږ بند شو.'});
+document.getElementById('copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(textEl.value);statusEl.textContent='☠️طلامحمدافغان☠️ — لیکنه کاپي شوه.'}catch(e){textEl.select();statusEl.textContent='لیکنه انتخاب شوه؛ د کاپي کولو لپاره یې کاپي کړئ.'}});
+document.getElementById('download').addEventListener('click',()=>window.open('https://ttsfree.com/text-to-speech/pashto-afghanistan','_blank','noopener'));
+updateCount();
+</script>
+</body>
+</html>
